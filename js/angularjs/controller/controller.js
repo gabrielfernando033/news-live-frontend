@@ -10,9 +10,21 @@ NewsLive.controller('NewsLiveController', ['NewsLiveService', '$modal', function
     
     // Methods
     vm.init = init;
+    vm.listarNoticias = listarNoticias;
 
     function init() {
-        
+        listarNoticias();
+    }
+
+    function listarNoticias() {
+        openGifModal();
+        NewsLiveService.getNoticias().then(function(response) {
+            console.log(response.data);
+        }, function(err) {
+            ct.Mensagem = "Funcionalidade não respondendo.";
+            closeGifModal();
+            modal();
+        });
     }
 
     function modal() {

@@ -1,1 +1,1 @@
-var NewsLive = angular.module('NewsLive', ['ui.bootstrap']);
+var NewsLive = angular.module('NewsLive', ['ngSanitize', 'ngResource','ui.bootstrap']);

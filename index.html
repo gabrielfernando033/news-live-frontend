@@ -18,224 +18,226 @@
         <script type="text/javascript" src="js/angularjs/controller/controller.js"></script>
         <script type="text/javascript" src="js/angularjs/service/service.js"></script>
     </head>
-    <body>
-        <div id="barra"></div>
-        <div id="topo">
-            <div id="topo_content">
-                <div id="topo_logo">
-                    <img src="images/logo.png" alt="logo" />
+    <body ng-app="NewsLive">
+        <div ng-controller="NewsLiveController" ng-init="NewsLiveController.init()">
+            <div id="barra"></div>
+            <div id="topo">
+                <div id="topo_content">
+                    <div id="topo_logo">
+                        <img src="images/logo.png" alt="logo" />
+                    </div>
+                    <div id="topo_pesquisa">
+                        <input type="text" placeholder="Digite sua pesquisa" />
+                        <input type="submit" value="Pesquisar" />
+                    </div>
                 </div>
-                <div id="topo_pesquisa">
-                    <input type="text" placeholder="Digite sua pesquisa" />
-                    <input type="submit" value="Pesquisar" />
+            </div>
+            <div id="base"></div>
+            <div id="menu">
+                <div id="menu_content">
+                    <a href="#" style="padding-left: 4px;">HOME</a>
+                    <span>&gt;</span>
+                    <a href="#">NEGÓCIOS</a>
+                    <span>&gt;</span>
+                    <a href="#">ENTRETENIMENTO</a>
+                    <span>&gt;</span>
+                    <a href="#">SAÚDE</a>
+                    <span>&gt;</span>
+                    <a href="#">CIÊNCIA</a>
+                    <span>&gt;</span>
+                    <a href="#">TECNOLOGIA</a>
+                    <span>&gt;</span>
+                    <a href="#">ESPORTES</a>
                 </div>
             </div>
-        </div>
-        <div id="base"></div>
-        <div id="menu">
-            <div id="menu_content">
-                <a href="#" style="padding-left: 4px;">HOME</a>
-                <span>&gt;</span>
-                <a href="#">NEGÓCIOS</a>
-                <span>&gt;</span>
-                <a href="#">ENTRETENIMENTO</a>
-                <span>&gt;</span>
-                <a href="#">SAÚDE</a>
-                <span>&gt;</span>
-                <a href="#">CIÊNCIA</a>
-                <span>&gt;</span>
-                <a href="#">TECNOLOGIA</a>
-                <span>&gt;</span>
-                <a href="#">ESPORTES</a>
-            </div>
-        </div>
-        <div id="destaques">
-            <div class="container">
-                <marquee>
-                    <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                    <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                    <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a>
-                </marquee>
-            </div>
-        </div>
-        <div id="content_home">
-            <div id="homepage1">
-                <div id="titulo1">
-                    <span></span>Notícias em alta
+            <div id="destaques">
+                <div class="container">
+                    <marquee>
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a>
+                    </marquee>
                 </div>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
-                <a href="#" class="news">
-                    <div class="news_imagem">
-                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    </div>
-                    <div class="news_conteudo">
-                        <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                        <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                    </div>
-                </a>
             </div>
-            <div id="homepage2">
-                <div id="titulo2">
-                    <span></span>Esportes
+            <div id="content_home">
+                <div id="homepage1">
+                    <div id="titulo1">
+                        <span></span>Notícias em alta
+                    </div>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
+                    <a href="#" class="news">
+                        <div class="news_imagem">
+                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        </div>
+                        <div class="news_conteudo">
+                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
+                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
+                        </div>
+                    </a>
                 </div>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
-                <a href="#" class="news_lateral">
-                    <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                    California may be the source of the latest romaine lettuce E. coli outbreak
-                </a>
+                <div id="homepage2">
+                    <div id="titulo2">
+                        <span></span>Esportes
+                    </div>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                    <a href="#" class="news_lateral">
+                        <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
+                        California may be the source of the latest romaine lettuce E. coli outbreak
+                    </a>
+                </div>
             </div>
-        </div>
-        <div id="barra_rodape"></div>
-        <div id="rodape">
-            <img src="images/logo.png" alt="logo" />
-        </div>
-        <div id="rodape_copyright">
-            Copyright &copy; 2018 Fatec Rubens Lara. Todos os direitos reservados.
+            <div id="barra_rodape"></div>
+            <div id="rodape">
+                <img src="images/logo.png" alt="logo" />
+            </div>
+            <div id="rodape_copyright">
+                Copyright &copy; 2018 Fatec Rubens Lara. Todos os direitos reservados.
+            </div>
         </div>
     </body>
 </html>
