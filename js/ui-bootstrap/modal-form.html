@@ -1,0 +1,31 @@
+<div tabindex="-1" role="dialog" class="modal fade ng-isolate-scope in" ng-class="{in: animate}" ng-style="{'z-index': 1050 + index*10, display: 'block'}" ng-click="close($event)" modal-window="" index="0" animate="animate" style="z-index: 1050;display: block;height: 222px;">
+    <div class="modal-dialog" ng-class="{'modal-sm': size == 'sm', 'modal-lg': size == 'lg'}">
+        <div class="modal-content" modal-transclude="">
+            <div class="modal-header">
+
+                <button type="button" ng-click="cancel()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+
+                <h3 style="text-align:center;">{{Title}}</h3>
+
+            </div>
+
+            <div class="modal-body">
+
+                <p style="text-align:center;margin-top: 3%;">{{Mensagem}}</p>
+
+                <div class="row">
+
+                    <div class="span2"></div>
+
+                    <div class="span1" style="margin-left: 15%; margin-top: 3%;">
+
+                        <button style="width: 30px;height: 30px;text-align: center;padding: 6px 0;font-size: 12px;line-height: 1;border-radius: 15px;" ng-click="cancel()" class="btn btn-primary"><i class="fa fa-times" aria-hidden="true"></i></button>
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

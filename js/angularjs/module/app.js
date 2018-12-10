@@ -1,0 +1,1 @@
+var NewsLive = angular.module('NewsLive', ['ui.bootstrap']);
