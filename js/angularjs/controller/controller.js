@@ -2,6 +2,17 @@ NewsLive.controller('NewsLiveController', ['NewsLiveService', '$modal', function
 
     var vm = this;
 
+    var noticia = {
+        id: null,
+        categoriaid: null,
+        titulo: null,
+        subtitulo: null,
+        conteudo: null,
+        imagem: null,
+        dataPostagem: null
+    };
+    vm.noticias = [];
+
     // Modal
     vm.Modal = "";
     vm.ModalGif = "";
@@ -13,17 +24,14 @@ NewsLive.controller('NewsLiveController', ['NewsLiveService', '$modal', function
     vm.listarNoticias = listarNoticias;
 
     function init() {
-        console.log("teste");
+        listarNoticias();
     }
 
     function listarNoticias() {
-        openGifModal();
         NewsLiveService.getNoticias().then(function(response) {
-            console.log(response.data);
+            vm.noticias = response.data.noticias;
         }, function(err) {
-            ct.Mensagem = "Funcionalidade não respondendo.";
-            closeGifModal();
-            modal();
+            console.log(err);
         });
     }
 

@@ -68,78 +68,17 @@
                     <div id="titulo1">
                         <span></span>Notícias em alta
                     </div>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
-                    <a href="#" class="news">
-                        <div class="news_imagem">
-                            <img src="https://i0.statig.com.br/bancodeimagens/4g/ko/j3/4gkoj39sqnefhyxnfoqn2xwuu.jpg" alt="" />
-                        </div>
-                        <div class="news_conteudo">
-                            <b>Guedes indica Rubem Novaes para o Banco do Brasil e Pedro Guimarães para a Caixa</b><br />
-                            <span>Rubem Novaes será o presidente do Banco do Brasil e Pedro Guimarães assumirá a Caixa. Leia mais sobre Rubem Novaes, Guimarães e as indicações de Guedes</span>
-                        </div>
-                    </a>
+                    <div ng-repeat="noticia in controller.noticias | orderBy: 'id':true | limitTo: 2">
+                        <a href="noticia.html" class="news">
+                            <div class="news_imagem">
+                                <img src="{{noticia.imagem}}" alt="" />
+                            </div>
+                            <div class="news_conteudo">
+                                <b>{{noticia.titulo}}</b><br />
+                                <span>{{noticia.subtitulo}}</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
                 <div id="homepage2">
                     <div id="titulo2">
