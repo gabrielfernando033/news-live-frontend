@@ -9,17 +9,21 @@
         <link rel="stylesheet" href="css/layout.css" />
         <link rel="stylesheet" href="css/home.css" />
         <!-- Jquery -->
-        <script type="text/javascript" src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery/jquery-ui.js"></script>
         <!-- Bootstrap -->
-        <script type="text/javascript" src="js/bootstrap/bootstrap.js"></script>
+        <script src="js/bootstrap/bootstrap.js"></script>
         <!-- AngularJs -->
-        <script type="text/javascript" src="js/angularjs/angular.min.js"></script>
-        <script type="text/javascript" src="js/angularjs/module/app.js"></script>
-        <script type="text/javascript" src="js/angularjs/controller/controller.js"></script>
-        <script type="text/javascript" src="js/angularjs/service/service.js"></script>
+        <script src="js/angularjs/angular.min.js"></script>
+        <script src="js/angularjs/angular-resource.min.js"></script>
+        <script src="js/angularjs/angular-sanitize.min.js"></script>
+        <script src="js/bootstrap/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+        <script src="js/angularjs/module/app.js"></script>
+        <script src="js/angularjs/controller/controller.js"></script>
+        <script src="js/angularjs/service/service.js"></script>
     </head>
     <body ng-app="NewsLive">
-        <div ng-controller="NewsLiveController" ng-init="NewsLiveController.init()">
+        <div ng-controller="NewsLiveController as controller" ng-init="controller.init()">
             <div id="barra"></div>
             <div id="topo">
                 <div id="topo_content">
