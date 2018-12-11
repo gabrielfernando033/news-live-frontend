@@ -80,15 +80,18 @@
                 </div>
 
                 <div ng-repeat="evento in controller.eventos | orderBy: 'id':true">
-                    <a href="evento.html?id={{evento.id}}" class="news1">
+                    <div class="news1">
                         <div class="news1_imagem">
                             <img src="{{evento.imagem}}" alt="" />
                         </div>
                         <div class="news1_conteudo">
                             <b>{{evento.titulo}}</b><br />
-                            <span>{{evento.descricao}}</span>
+                            <span>Data: {{evento.dataEvento}}</span><br />
+                            <span>Preço: {{evento.preco}}</span><br />
+                            <span>Tipo: {{evento.tipo}}</span><br />
+                            <span>Descrição: {{evento.descricao}}</span>
                         </div>
-                    </a>
+                    </div>
                 </div>
 
             </div>

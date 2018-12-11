@@ -48,7 +48,15 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
             dataPostagem: data
         };
         NewsLiveService.inserirNoticia(formObj).then(function(response) {
-            console.log(response);
+            if (response.data.noticia != null && response.data.noticia != undefined)
+            {
+                alert("Inserido com sucesso!");
+                location.reload();
+            }
+            else
+            {
+                location.reload();
+            }
         }, function(err) {
             console.log(err);
         });
@@ -59,7 +67,15 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
             nome: formObj.nome
         };
         NewsLiveService.inserirCategoria(formObj).then(function(response) {
-            console.log(response);
+            if (response.data.categoria != null && response.data.categoria != undefined)
+            {
+                alert("Inserido com sucesso!");
+                location.reload();
+            }
+            else
+            {
+                location.reload();
+            }
         }, function(err) {
             console.log(err);
         });
@@ -75,7 +91,15 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
             imagem: formObj.imagem
         };
         NewsLiveService.inserirEvento(formObj).then(function(response) {
-            console.log(response);
+            if (response.data.evento != null && response.data.evento != undefined)
+            {
+                alert("Inserido com sucesso!");
+                location.reload();
+            }
+            else
+            {
+                location.reload();
+            }
         }, function(err) {
             console.log(err);
         });
@@ -90,7 +114,15 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
             senha: formObj.senha
         };
         NewsLiveService.inserirAdmin(formObj).then(function(response) {
-            console.log(response);
+            if (response.data.adminid != null && response.data.adminid != undefined)
+            {
+                alert("Inserido com sucesso!");
+                location.reload();
+            }
+            else
+            {
+                location.reload();
+            }
         }, function(err) {
             console.log(err);
         });
