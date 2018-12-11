@@ -2,12 +2,11 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>News Live :: Página Inicial</title>
+        <title>News Live :: Entretenimento</title>
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <!-- Layout style -->
         <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
         <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/home.css" />
         <!-- Jquery -->
         <script src="js/jquery/jquery-3.3.1.min.js"></script>
         <script src="js/jquery/jquery-ui.js"></script>
@@ -19,11 +18,11 @@
         <script src="js/angularjs/angular-sanitize.min.js"></script>
         <script src="js/bootstrap/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
         <script src="js/angularjs/module/app.js"></script>
-        <script src="js/angularjs/controller/controllerHome.js"></script>
+        <script src="js/angularjs/controller/controllerNoticiaCategoria.js"></script>
         <script src="js/angularjs/service/service.js"></script>
     </head>
     <body ng-app="NewsLive">
-        <div ng-controller="NewsLiveController as controller" ng-init="controller.init()">
+        <div ng-controller="NewsLiveControllerNoticiaCategoria as controller" ng-init="controller.init()">
             <div id="barra">
                 <div id="barra_content">
                     <img src="images/ic_admin.png" alt="" />
@@ -68,45 +67,24 @@
                     </marquee>
                 </div>
             </div>
-            <div id="content_home">
-                <div id="homepage1">
-                    <div id="titulo1">
-                        <span></span>Notícias em alta
-                    </div>
-                    <div ng-repeat="noticia in controller.noticias | orderBy: 'id':true | limitTo: 5">
-                        <a href="noticia.html?id={{noticia.id}}" class="news">
-                            <div class="news_imagem">
-                                <img src="{{noticia.imagem}}" alt="" />
-                            </div>
-                            <div class="news_conteudo">
-                                <b>{{noticia.titulo}}</b><br />
-                                <span>{{noticia.subtitulo}}</span>
-                            </div>
-                        </a>
-                    </div>
+            <div id="content">
+                
+                <div id="titulo">
+                    <span></span>Entretenimento
                 </div>
-                <div id="homepage2">
-                    <div id="titulo2">
-                        <span style="background-color: #008C46;"></span>Esportes
-                    </div>
-                    <div ng-repeat="esporte in controller.esportes | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
-                            <img src="{{esporte.imagem}}" alt="" />
-                            {{esporte.titulo}}}
-                        </a>
-                    </div>
+
+                <div ng-repeat="entretenimento in controller.entretenimentos | orderBy: 'id':true">
+                    <a href="noticia.html?id={{entretenimento.id}}" class="news1">
+                        <div class="news1_imagem">
+                            <img src="{{entretenimento.imagem}}" alt="" />
+                        </div>
+                        <div class="news1_conteudo">
+                            <b>{{entretenimento.titulo}}</b><br />
+                            <span>{{entretenimento.subtitulo}}</span>
+                        </div>
+                    </a>
                 </div>
-                <div id="homepage3">
-                    <div id="titulo2">
-                        <span></span>Agenda
-                    </div>
-                    <div ng-repeat="evento in controller.eventos | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
-                            <img src="{{evento.imagem}}" alt="" />
-                            {{evento.titulo}}
-                        </a>
-                    </div>
-                </div>
+
             </div>
             <div id="barra_rodape"></div>
             <div id="rodape">
