@@ -38,8 +38,10 @@
                         </a>
                     </div>
                     <div id="topo_pesquisa">
-                        <input type="text" placeholder="Digite sua pesquisa" />
-                        <input type="submit" value="Pesquisar" />
+                        <form method="GET" action="search.html">
+                            <input type="text" name="q" placeholder="Digite sua pesquisa" />
+                            <input type="submit" value="Pesquisar" />
+                        </form>
                     </div>
                 </div>
             </div>
@@ -67,7 +69,7 @@
                 <div class="container">
                     <marquee>
                         <span ng-repeat="noticia in controller.noticias | orderBy: 'id' | limitTo: 3">
-                            <a href="#">{{noticia.titulo}}</a> |
+                            <a href="noticia.html?id={{noticia.id}}">{{noticia.titulo}}</a> |
                         </span>
                     </marquee>
                 </div>
@@ -75,13 +77,13 @@
             <div id="content">
                 
                 <div id="titulo" style="height: auto;">
-                    <span></span>{{noticiaUrl.titulo}}<br />
-                    <h6>{{noticiaUrl.subtitulo}}</h6>
+                    <span></span>{{controller.noticiaUrl.titulo}}<br />
+                    <h6>{{controller.noticiaUrl.subtitulo}}</h6>
                 </div>
 
                 <div id="noticia_conteudo">
-                    <img src="{{noticiaUrl.imagem}}" alt="" />
-                    {{noticiaUrl.conteudo}}
+                    <img src="{{controller.noticiaUrl.imagem}}" alt="" />
+                    {{controller.noticiaUrl.conteudo}}
                 </div>
 
             </div>

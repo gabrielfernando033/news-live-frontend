@@ -69,7 +69,7 @@
                 <div class="container">
                     <marquee>
                         <span ng-repeat="noticia in controller.noticias | orderBy: 'id' | limitTo: 3">
-                            <a href="#">{{noticia.titulo}}</a> |
+                            <a href="noticia.html?id={{noticia.id}}">{{noticia.titulo}}</a> |
                         </span>
                     </marquee>
                 </div>
