@@ -24,11 +24,18 @@
     </head>
     <body ng-app="NewsLive">
         <div ng-controller="NewsLiveControllerAdmin as controller" ng-init="controller.init()">
-            <div id="barra"></div>
+            <div id="barra">
+                <div id="barra_content">
+                    <img src="images/ic_admin.png" alt="" />
+                    <a href="admin.html">Administrador</a>
+                </div>
+            </div>
             <div id="topo">
                 <div id="topo_content">
                     <div id="topo_logo">
-                        <img src="images/logo.png" alt="logo" />
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="logo" />
+                        </a>
                     </div>
                     <div id="topo_pesquisa">
                         <input type="text" placeholder="Digite sua pesquisa" />
@@ -39,27 +46,29 @@
             <div id="base"></div>
             <div id="menu">
                 <div id="menu_content">
-                    <a href="#" style="padding-left: 4px;">HOME</a>
+                    <a href="index.html" style="padding-left: 4px;">HOME</a>
                     <span>&gt;</span>
-                    <a href="#">NEGÓCIOS</a>
+                    <a href="negocios.html">NEGÓCIOS</a>
                     <span>&gt;</span>
-                    <a href="#">ENTRETENIMENTO</a>
+                    <a href="entretenimento.html">ENTRETENIMENTO</a>
                     <span>&gt;</span>
-                    <a href="#">SAÚDE</a>
+                    <a href="saude.html">SAÚDE</a>
                     <span>&gt;</span>
-                    <a href="#">CIÊNCIA</a>
+                    <a href="ciencia.html">CIÊNCIA</a>
                     <span>&gt;</span>
-                    <a href="#">TECNOLOGIA</a>
+                    <a href="tecnologia.html">TECNOLOGIA</a>
                     <span>&gt;</span>
-                    <a href="#">ESPORTES</a>
+                    <a href="esportes.html">ESPORTES</a>
+                    <span>&gt;</span>
+                    <a href="agenda.html">AGENDA</a>
                 </div>
             </div>
             <div id="destaques">
                 <div class="container">
                     <marquee>
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a>
+                        <span ng-repeat="noticia in controller.noticias | orderBy: 'id' | limitTo: 3">
+                            <a href="#">{{noticia.titulo}}</a> |
+                        </span>
                     </marquee>
                 </div>
             </div>

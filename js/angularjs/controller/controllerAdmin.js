@@ -2,11 +2,13 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
 
     var vm = this;
 
+    vm.noticias = [];
     vm.categorias = [];
     vm.categoria = {};
     
     // Methods
     vm.init = init;
+    vm.listarNoticias = listarNoticias;
     vm.getCategorias = getCategorias;
     vm.inserirNoticia = inserirNoticia;
     vm.inserirAdmin = inserirAdmin;
@@ -14,7 +16,16 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(News
     vm.inserirCategoria = inserirCategoria;
 
     function init() {
+        listarNoticias();
         getCategorias();
+    }
+
+    function listarNoticias() {
+        NewsLiveService.getNoticias().then(function(response) {
+            vm.noticias = response.data.noticias;
+        }, function(err) {
+            console.log(err);
+        });
     }
 
     function getCategorias() {
