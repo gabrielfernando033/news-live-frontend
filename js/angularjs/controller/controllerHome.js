@@ -12,12 +12,6 @@ NewsLive.controller('NewsLiveController', ['NewsLiveService', '$modal', function
         dataPostagem: null
     };
     vm.noticias = [];
-
-    // Modal
-    vm.Modal = "";
-    vm.ModalGif = "";
-    vm.Title = "";
-    vm.Mensagem = "";
     
     // Methods
     vm.init = init;

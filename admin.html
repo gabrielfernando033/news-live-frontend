@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>News Live :: Página Inicial</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+        <!-- Layout style -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <link rel="stylesheet" href="css/home.css" />
+        <!-- Jquery -->
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery/jquery-ui.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap/bootstrap.js"></script>
+        <!-- AngularJs -->
+        <script src="js/angularjs/angular.min.js"></script>
+        <script src="js/angularjs/angular-resource.min.js"></script>
+        <script src="js/angularjs/angular-sanitize.min.js"></script>
+        <script src="js/bootstrap/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+        <script src="js/angularjs/module/app.js"></script>
+        <script src="js/angularjs/controller/controllerAdmin.js"></script>
+        <script src="js/angularjs/service/service.js"></script>
+    </head>
+    <body ng-app="NewsLive">
+        <div ng-controller="NewsLiveControllerAdmin as controller" ng-init="controller.init()">
+            <div id="barra"></div>
+            <div id="topo">
+                <div id="topo_content">
+                    <div id="topo_logo">
+                        <img src="images/logo.png" alt="logo" />
+                    </div>
+                    <div id="topo_pesquisa">
+                        <input type="text" placeholder="Digite sua pesquisa" />
+                        <input type="submit" value="Pesquisar" />
+                    </div>
+                </div>
+            </div>
+            <div id="base"></div>
+            <div id="menu">
+                <div id="menu_content">
+                    <a href="#" style="padding-left: 4px;">HOME</a>
+                    <span>&gt;</span>
+                    <a href="#">NEGÓCIOS</a>
+                    <span>&gt;</span>
+                    <a href="#">ENTRETENIMENTO</a>
+                    <span>&gt;</span>
+                    <a href="#">SAÚDE</a>
+                    <span>&gt;</span>
+                    <a href="#">CIÊNCIA</a>
+                    <span>&gt;</span>
+                    <a href="#">TECNOLOGIA</a>
+                    <span>&gt;</span>
+                    <a href="#">ESPORTES</a>
+                </div>
+            </div>
+            <div id="destaques">
+                <div class="container">
+                    <marquee>
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
+                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a>
+                    </marquee>
+                </div>
+            </div>
+            <div id="content">
+
+                Inserir noticia
+                <form name="formNoticia">
+                    <label for="categoria"> Categoria: </label>
+                    <select name="categoria" ng-model="controller.categoria" required>
+                        <option ng-repeat="categoria in controller.categorias" value="{{categoria.id}}">{{categoria.nome}}</option>
+                    </select><br />
+                    <label>Titulo: <input type="text" ng-model="noticiaForm.titulo" required /></label><br />
+                    <label>Subtitulo: <input type="text" ng-model="noticiaForm.subtitulo" required /></label><br />
+                    <label>Conteúdo: <input type="text" ng-model="noticiaForm.conteudo" required /></label><br />
+                    <label>Imagem: <input type="text" ng-model="noticiaForm.imagem" required /></label><br />
+                    <input type="submit" ng-disabled="formNoticia.$invalid" ng-click="controller.inserirNoticia(noticiaForm)" value="Inserir" />
+                </form>
+
+                <br />
+                <br />
+                <br />
+
+                Inserir categorias
+                <form name="formCategoria">
+                    <label>Nome: <input type="text" ng-model="formCategoria.nome" required /></label><br />
+                    <input type="submit" ng-disabled="formCategoria.$invalid" ng-click="controller.inserirCategoria(formCategoria)" value="Inserir" />
+                </form>
+
+                Inserir administradores
+                <form name="formAdmin">
+                    <label>Nome: <input type="text" ng-model="formAdmin.nome" required /></label><br />
+                    <label>Sobrenome: <input type="text" ng-model="formAdmin.sobrenome" required /></label><br />
+                    <label>Email: <input type="text" ng-model="formAdmin.email" required /></label><br />
+                    <label>Usuário: <input type="text" ng-model="formAdmin.usuario" required /></label><br />
+                    <label>Senha: <input type="password" ng-model="formAdmin.senha" required /></label><br />
+                    <input type="submit" ng-disabled="formAdmin.$invalid" ng-click="controller.inserirAdmin(formAdmin)" value="Inserir" />
+                </form>
+
+            </div>
+            <div id="barra_rodape"></div>
+            <div id="rodape">
+                <img src="images/logo.png" alt="logo" />
+            </div>
+            <div id="rodape_copyright">
+                Copyright &copy; 2018 Fatec Rubens Lara. Todos os direitos reservados.
+            </div>
+        </div>
+    </body>
+</html>
