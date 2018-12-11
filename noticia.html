@@ -86,6 +86,31 @@
                     {{controller.noticiaUrl.conteudo}}
                 </div>
 
+                <div id="titulo">
+                    <span></span>Comentários<br />
+                </div>
+
+                <div id="comentarios" ng-repeat="comentario in controller.comentarios | orderBy:'id':true">
+                    <div class="card">
+                        <div class="card-body">
+                            <b>{{comentario.autor}}</b><br />
+                            <i>{{comentario.dataPostagem}}</i><br />
+                            {{comentario.conteudo}}
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="margin-top: 10px;">
+                    <div class="card-body">
+                        <h5>Inserir comentário</h5>
+                        <form name="formComentario" id="formComentario">
+                            <label>Nome: <input type="text" class="form-control" ng-model="formComentario.autor" required /></label><br />
+                            <label>Comentário: <input type="text" class="form-control" ng-model="formComentario.conteudo" required /></label><br />
+                            <input type="submit" class="btn btn-secondary" ng-disabled="formComentario.$invalid" ng-click="controller.inserirComentario(formComentario)" value="Inserir" />
+                        </form>
+                    </div>
+                </div>
+
             </div>
             <div id="barra_rodape"></div>
             <div id="rodape">

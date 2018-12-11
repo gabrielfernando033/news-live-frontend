@@ -11,3 +11,10 @@
     width: 500px;
     height: auto;
 }
+#comentarios {
+    width: 1024px;
+    height: auto;
+    margin-top: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}

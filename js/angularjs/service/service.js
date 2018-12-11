@@ -50,6 +50,16 @@ NewsLive.service("NewsLiveService", ['$http', function($http) {
         return $http.get("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/eventos/");
     };
 
+    var _getComentariosPorNoticia = function(noticiaid) {
+        AllowAccesServiceAPI();
+        return $http.get("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/comentarios/" + noticiaid);
+    };
+
+    var _inserirComentario = function(comentario) {
+        AllowAccesServiceAPI();
+        return $http.post("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/comentario/", comentario);
+    };
+
     function AllowAccesServiceAPI() {
         $http.defaults.headers.common['Access-Control-Allow-Origin'] = '*';
         $http.defaults.headers.post['dataType'] = 'json';
@@ -66,5 +76,7 @@ NewsLive.service("NewsLiveService", ['$http', function($http) {
     this.getNoticiasPorCategoria = _getNoticiasPorCategoria;
     this.getNoticia = _getNoticia;
     this.getEventos = _getEventos;
+    this.getComentariosPorNoticia = _getComentariosPorNoticia;
+    this.inserirComentario = _inserirComentario;
 
 }]);
