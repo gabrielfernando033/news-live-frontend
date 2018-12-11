@@ -1,0 +1,25 @@
+.admin_titulo {
+    width: 1024px;
+    height: 40px;
+    line-height: 36px;
+    border-bottom-color: #000000;
+    border-bottom-width: 6px;
+    border-bottom-style: solid;
+    font-weight: bold;
+    font-size: 18px;
+}
+.admin_titulo span {
+    width: 6px;
+    height: 24px;
+    background-color: #D96D00;
+    display: block;
+    float: left;
+    margin-right: 14px;
+    margin-top: 6px;
+}
+.form_conteudo {
+    width: 1004px;
+    height: auto;
+    margin-bottom: 20px;
+    padding: 10px;
+}
