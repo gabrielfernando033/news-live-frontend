@@ -10,6 +10,8 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', '$modal', fun
     vm.getCategorias = getCategorias;
     vm.inserirNoticia = inserirNoticia;
     vm.inserirAdmin = inserirAdmin;
+    vm.inserirEvento = inserirEvento;
+    vm.inserirCategoria = inserirCategoria;
 
     function init() {
         getCategorias();
@@ -41,6 +43,33 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', '$modal', fun
         });
     }
 
+    function inserirCategoria(formObj) {
+        formObj = {
+            nome: formObj.nome
+        };
+        NewsLiveService.inserirCategoria(formObj).then(function(response) {
+            console.log(response);
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
+    function inserirEvento(formObj) {
+        formObj = {
+            tipo: formObj.tipo,
+            titulo: formObj.titulo,
+            descricao: formObj.descricao,
+            dataEvento: formObj.dataEvento,
+            preco: Number(formObj.preco),
+            imagem: formObj.imagem
+        };
+        NewsLiveService.inserirEvento(formObj).then(function(response) {
+            console.log(response);
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
     function inserirAdmin(formObj) {
         formObj = {
             nome: formObj.nome,
@@ -49,7 +78,6 @@ NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', '$modal', fun
             usuario: formObj.usuario,
             senha: formObj.senha
         };
-        console.log(formObj);
         NewsLiveService.inserirAdmin(formObj).then(function(response) {
             console.log(response);
         }, function(err) {

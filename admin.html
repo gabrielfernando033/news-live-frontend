@@ -80,13 +80,29 @@
 
                 <br />
                 <br />
-                <br />
 
                 Inserir categorias
                 <form name="formCategoria">
                     <label>Nome: <input type="text" ng-model="formCategoria.nome" required /></label><br />
                     <input type="submit" ng-disabled="formCategoria.$invalid" ng-click="controller.inserirCategoria(formCategoria)" value="Inserir" />
                 </form>
+
+                <br />
+                <br />
+
+                Inserir evento
+                <form name="formEvento">
+                    <label>Tipo: <input type="text" ng-model="formEvento.tipo" required /></label><br />
+                    <label>Titulo: <input type="text" ng-model="formEvento.titulo" required /></label><br />
+                    <label>Descrição: <input type="text" ng-model="formEvento.descricao" required /></label><br />
+                    <label>Data evento: <input type="text" ng-model="formEvento.dataEvento" required /></label><br />
+                    <label>Preço: <input type="text" ng-model="formEvento.preco" required /></label><br />
+                    <label>Imagem: <input type="text" ng-model="formEvento.imagem" required /></label><br />
+                    <input type="submit" ng-disabled="formEvento.$invalid" ng-click="controller.inserirEvento(formEvento)" value="Inserir" />
+                </form>
+
+                <br />
+                <br />
 
                 Inserir administradores
                 <form name="formAdmin">

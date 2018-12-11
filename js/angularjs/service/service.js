@@ -25,6 +25,11 @@ NewsLive.service("NewsLiveService", ['$http', function($http) {
         return $http.post("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/categoria/", categoria);
     };
 
+    var _inserirEvento = function(evento) {
+        AllowAccesServiceAPI();
+        return $http.post("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/evento/", evento);
+    };
+
     var _inserirAdmin = function(admin) {
         AllowAccesServiceAPI();
         return $http.post("https://cors-anywhere.herokuapp.com/https://projeto-final-gabrielfernando033.c9users.io/admin/", admin);
@@ -41,6 +46,7 @@ NewsLive.service("NewsLiveService", ['$http', function($http) {
     this.getCategorias = _getCategorias;
     this.inserirNoticia = _inserirNoticia;
     this.inserirCategoria = _inserirCategoria;
+    this.inserirEvento = _inserirEvento;
     this.inserirAdmin = _inserirAdmin;
 
 }]);
