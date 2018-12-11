@@ -9,6 +9,7 @@ NewsLive.controller('NewsLiveControllerNoticiaCategoria', ['NewsLiveService', fu
     vm.ciencias = [];
     vm.tecnologias = [];
     vm.esportes = [];
+    vm.pesquisas = [];
     
     // Methods
     vm.init = init;
@@ -19,6 +20,7 @@ NewsLive.controller('NewsLiveControllerNoticiaCategoria', ['NewsLiveService', fu
     vm.listarCiencias = listarCiencias;
     vm.listarTecnologias = listarTecnologias;
     vm.listarEsportes = listarEsportes;
+    vm.search = search;
 
     function init(categoria) {
         listarNoticias();
@@ -34,6 +36,12 @@ NewsLive.controller('NewsLiveControllerNoticiaCategoria', ['NewsLiveService', fu
             listarTecnologias();
         if (categoria == "esporte")
             listarEsportes();
+        if (categoria == "search")
+        {
+            const urlParams = new URLSearchParams(window.location.search);
+            const q = urlParams.get('q');
+            search(q);
+        }
     }
 
     function listarNoticias() {
@@ -89,6 +97,14 @@ NewsLive.controller('NewsLiveControllerNoticiaCategoria', ['NewsLiveService', fu
     function listarEsportes() {
         NewsLiveService.getNoticiasPorCategoria(6).then(function(response) {
             vm.esportes = response.data.noticias;
+        }, function(err) {
+            console.log(err);
+        });
+    }
+
+    function search(busca) {
+        NewsLiveService.searchNoticias(busca).then(function(response) {
+            vm.pesquisas = response.data.resultado;
         }, function(err) {
             console.log(err);
         });
