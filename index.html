@@ -96,9 +96,9 @@
                         <span style="background-color: #008C46;"></span>Esportes
                     </div>
                     <div ng-repeat="esporte in controller.esportes | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
+                        <a href="noticia.html?id={{esporte.id}}" class="news_lateral">
                             <img src="{{esporte.imagem}}" alt="" />
-                            {{esporte.titulo}}}
+                            {{esporte.titulo}}
                         </a>
                     </div>
                 </div>
@@ -107,10 +107,10 @@
                         <span></span>Agenda
                     </div>
                     <div ng-repeat="evento in controller.eventos | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
+                        <span class="news_lateral">
                             <img src="{{evento.imagem}}" alt="" />
                             {{evento.titulo}}
-                        </a>
+                        </span>
                     </div>
                 </div>
             </div>
