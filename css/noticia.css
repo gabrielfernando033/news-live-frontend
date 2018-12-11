@@ -1,0 +1,13 @@
+#noticia_conteudo {
+    width: 1024px;
+    height: auto;
+    margin-top: 10px;
+    overflow: auto;
+}
+#noticia_conteudo img {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    width: 500px;
+    height: auto;
+}

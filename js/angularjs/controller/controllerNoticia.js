@@ -1,19 +1,29 @@
-NewsLive.controller('NewsLiveControllerNoticia', ['NewsLiveService', '$location', function(NewsLiveService, $location) {
+NewsLive.controller('NewsLiveControllerNoticia', ['NewsLiveService', function(NewsLiveService) {
 
     var vm = this;
 
+    vm.noticiaUrl = {};
+
     // Methods
     vm.init = init;
+    vm.getNoticia = getNoticia;
 
     function init() {
-        var paramValue = $location.search().id;
-        console.log(paramValue);
-        getNoticia(paramValue);
+        const urlParams = new URLSearchParams(window.location.search);
+        const id = urlParams.get('id');
+        getNoticia(id);
     }
 
     function getNoticia(id) {
         NewsLiveService.getNoticia(id).then(function(response) {
-            console.log(response);
+            if (response.data.noticia.length == 0)
+            {
+                window.location.href = 'index.html'
+            }
+            else
+            {
+                vm.noticiaUrl = response.data.noticia[0];
+            }
         }, function(err) {
             console.log(err);
         });

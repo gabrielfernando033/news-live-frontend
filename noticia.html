@@ -2,12 +2,12 @@
 <html lang="pt-br">
     <head>
         <meta charset="utf-8">
-        <title>News Live :: Página Inicial</title>
+        <title>News Live :: Notícia</title>
         <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
         <!-- Layout style -->
         <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
         <link rel="stylesheet" href="css/layout.css" />
-        <link rel="stylesheet" href="css/home.css" />
+        <link rel="stylesheet" href="css/noticia.css" />
         <!-- Jquery -->
         <script src="js/jquery/jquery-3.3.1.min.js"></script>
         <script src="js/jquery/jquery-ui.js"></script>
@@ -24,7 +24,12 @@
     </head>
     <body ng-app="NewsLive">
         <div ng-controller="NewsLiveControllerNoticia as controller" ng-init="controller.init()">
-            <div id="barra"></div>
+            <div id="barra">
+                <div id="barra_content">
+                    <img src="images/ic_admin.png" alt="" />
+                    <a href="admin.html">Administrador</a>
+                </div>
+            </div>
             <div id="topo">
                 <div id="topo_content">
                     <div id="topo_logo">
@@ -41,19 +46,19 @@
             <div id="base"></div>
             <div id="menu">
                 <div id="menu_content">
-                    <a href="#" style="padding-left: 4px;">HOME</a>
+                    <a href="index.html" style="padding-left: 4px;">HOME</a>
                     <span>&gt;</span>
-                    <a href="#">NEGÓCIOS</a>
+                    <a href="negocios.html">NEGÓCIOS</a>
                     <span>&gt;</span>
-                    <a href="#">ENTRETENIMENTO</a>
+                    <a href="entretenimento.html">ENTRETENIMENTO</a>
                     <span>&gt;</span>
-                    <a href="#">SAÚDE</a>
+                    <a href="saude.html">SAÚDE</a>
                     <span>&gt;</span>
-                    <a href="#">CIÊNCIA</a>
+                    <a href="ciencia.html">CIÊNCIA</a>
                     <span>&gt;</span>
-                    <a href="#">TECNOLOGIA</a>
+                    <a href="tecnologia.html">TECNOLOGIA</a>
                     <span>&gt;</span>
-                    <a href="#">ESPORTES</a>
+                    <a href="esportes.html">ESPORTES</a>
                     <span>&gt;</span>
                     <a href="agenda.html">AGENDA</a>
                 </div>
@@ -61,15 +66,23 @@
             <div id="destaques">
                 <div class="container">
                     <marquee>
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a> |
-                        <a href="#">California may be the source of the latest romaine lettuce E. coli outbreak</a>
+                        <span ng-repeat="noticia in controller.noticias | orderBy: 'id' | limitTo: 3">
+                            <a href="#">{{noticia.titulo}}</a> |
+                        </span>
                     </marquee>
                 </div>
             </div>
             <div id="content">
-
                 
+                <div id="titulo" style="height: auto;">
+                    <span></span>{{noticiaUrl.titulo}}<br />
+                    <h6>{{noticiaUrl.subtitulo}}</h6>
+                </div>
+
+                <div id="noticia_conteudo">
+                    <img src="{{noticiaUrl.imagem}}" alt="" />
+                    {{noticiaUrl.conteudo}}
+                </div>
 
             </div>
             <div id="barra_rodape"></div>

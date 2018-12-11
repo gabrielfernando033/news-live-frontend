@@ -78,7 +78,7 @@
                     <span></span>Inserir Notícia
                 </div>
                 <div class="form_conteudo">
-                    <form name="formNoticia">
+                    <form name="formNoticia" id="formNoticia">
                         <label for="categoria"> Categoria: </label>
                         <select class="form-control" name="categoria" ng-model="controller.categoria" required>
                             <option ng-repeat="categoria in controller.categorias" value="{{categoria.id}}">{{categoria.nome}}</option>
@@ -88,6 +88,7 @@
                         <label>Conteúdo: <input type="text" class="form-control" ng-model="noticiaForm.conteudo" required /></label><br />
                         <label>Imagem: <input type="text" class="form-control" ng-model="noticiaForm.imagem" required /></label><br />
                         <input type="submit" class="btn btn-secondary" ng-disabled="formNoticia.$invalid" ng-click="controller.inserirNoticia(noticiaForm)" value="Inserir" />
+                        <button type="button" onclick="getElementById('formNoticia').reset()" class="btn btn-outline-secondary">Limpar</button>
                     </form>
                 </div>
 
@@ -95,9 +96,10 @@
                     <span></span>Inserir Categorias
                 </div>
                 <div class="form_conteudo">
-                    <form name="formCategoria">
+                    <form name="formCategoria" id="formCategoria">
                         <label>Nome: <input type="text" class="form-control" ng-model="formCategoria.nome" required /></label><br />
                         <input type="submit" class="btn btn-secondary" ng-disabled="formCategoria.$invalid" ng-click="controller.inserirCategoria(formCategoria)" value="Inserir" />
+                        <button type="button" onclick="getElementById('formCategoria').reset()" class="btn btn-outline-secondary">Limpar</button>
                     </form>
                 </div>
 
@@ -105,7 +107,7 @@
                     <span></span>Inserir Evento
                 </div>
                 <div class="form_conteudo">
-                    <form name="formEvento">
+                    <form name="formEvento" id="formEvento">
                         <label>Tipo: <input type="text" class="form-control" ng-model="formEvento.tipo" required /></label><br />
                         <label>Titulo: <input type="text" class="form-control" ng-model="formEvento.titulo" required /></label><br />
                         <label>Descrição: <input type="text" class="form-control" ng-model="formEvento.descricao" required /></label><br />
@@ -113,6 +115,7 @@
                         <label>Preço: <input type="text" class="form-control" ng-model="formEvento.preco" required /></label><br />
                         <label>Imagem: <input type="text" class="form-control" ng-model="formEvento.imagem" required /></label><br />
                         <input type="submit" class="btn btn-secondary" ng-disabled="formEvento.$invalid" ng-click="controller.inserirEvento(formEvento)" value="Inserir" />
+                        <button type="button" onclick="getElementById('formEvento').reset()" class="btn btn-outline-secondary">Limpar</button>
                     </form>
                 </div>
 
@@ -120,13 +123,14 @@
                     <span></span>Inserir Administradores
                 </div>
                 <div class="form_conteudo">
-                    <form name="formAdmin">
+                    <form name="formAdmin" id="formAdmin">
                         <label>Nome: <input type="text" class="form-control" ng-model="formAdmin.nome" required /></label><br />
                         <label>Sobrenome: <input type="text" class="form-control" ng-model="formAdmin.sobrenome" required /></label><br />
                         <label>Email: <input type="text" class="form-control" ng-model="formAdmin.email" required /></label><br />
                         <label>Usuário: <input type="text" class="form-control" ng-model="formAdmin.usuario" required /></label><br />
                         <label>Senha: <input type="password" class="form-control" ng-model="formAdmin.senha" required /></label><br />
                         <input type="submit" class="btn btn-secondary" ng-disabled="formAdmin.$invalid" ng-click="controller.inserirAdmin(formAdmin)" value="Inserir" />
+                        <button type="button" onclick="getElementById('formAdmin').reset()" class="btn btn-outline-secondary">Limpar</button>
                     </form>
                 </div>
 
