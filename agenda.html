@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>News Live :: Agenda</title>
+        <link rel="shortcut icon" type="image/png" href="images/favicon.png"/>
+        <!-- Layout style -->
+        <link rel="stylesheet" href="css/bootstrap/bootstrap.css" />
+        <link rel="stylesheet" href="css/layout.css" />
+        <!-- Jquery -->
+        <script src="js/jquery/jquery-3.3.1.min.js"></script>
+        <script src="js/jquery/jquery-ui.js"></script>
+        <!-- Bootstrap -->
+        <script src="js/bootstrap/bootstrap.js"></script>
+        <!-- AngularJs -->
+        <script src="js/angularjs/angular.min.js"></script>
+        <script src="js/angularjs/angular-resource.min.js"></script>
+        <script src="js/angularjs/angular-sanitize.min.js"></script>
+        <script src="js/bootstrap/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
+        <script src="js/angularjs/module/app.js"></script>
+        <script src="js/angularjs/controller/controllerAgenda.js"></script>
+        <script src="js/angularjs/service/service.js"></script>
+    </head>
+    <body ng-app="NewsLive">
+        <div ng-controller="NewsLiveControllerAgenda as controller" ng-init="controller.init()">
+            <div id="barra">
+                <div id="barra_content">
+                    <img src="images/ic_admin.png" alt="" />
+                    <a href="admin.html">Administrador</a>
+                </div>
+            </div>
+            <div id="topo">
+                <div id="topo_content">
+                    <div id="topo_logo">
+                        <a href="index.html">
+                            <img src="images/logo.png" alt="logo" />
+                        </a>
+                    </div>
+                    <div id="topo_pesquisa">
+                        <input type="text" placeholder="Digite sua pesquisa" />
+                        <input type="submit" value="Pesquisar" />
+                    </div>
+                </div>
+            </div>
+            <div id="base"></div>
+            <div id="menu">
+                <div id="menu_content">
+                    <a href="index.html" style="padding-left: 4px;">HOME</a>
+                    <span>&gt;</span>
+                    <a href="negocios.html">NEGÓCIOS</a>
+                    <span>&gt;</span>
+                    <a href="entretenimento.html">ENTRETENIMENTO</a>
+                    <span>&gt;</span>
+                    <a href="saude.html">SAÚDE</a>
+                    <span>&gt;</span>
+                    <a href="ciencia.html">CIÊNCIA</a>
+                    <span>&gt;</span>
+                    <a href="tecnologia.html">TECNOLOGIA</a>
+                    <span>&gt;</span>
+                    <a href="esportes.html">ESPORTES</a>
+                    <span>&gt;</span>
+                    <a href="agenda.html">AGENDA</a>
+                </div>
+            </div>
+            <div id="destaques">
+                <div class="container">
+                    <marquee>
+                        <span ng-repeat="noticia in controller.noticias | orderBy: 'id' | limitTo: 3">
+                            <a href="#">{{noticia.titulo}}</a> |
+                        </span>
+                    </marquee>
+                </div>
+            </div>
+            <div id="content">
+                
+                <div id="titulo">
+                    <span></span>Agenda de eventos
+                </div>
+
+                <div ng-repeat="evento in controller.eventos | orderBy: 'id':true">
+                    <a href="evento.html?id={{evento.id}}" class="news1">
+                        <div class="news1_imagem">
+                            <img src="{{evento.imagem}}" alt="" />
+                        </div>
+                        <div class="news1_conteudo">
+                            <b>{{evento.titulo}}</b><br />
+                            <span>{{evento.descricao}}</span>
+                        </div>
+                    </a>
+                </div>
+
+            </div>
+            <div id="barra_rodape"></div>
+            <div id="rodape">
+                <img src="images/logo.png" alt="logo" />
+            </div>
+            <div id="rodape_copyright">
+                Copyright &copy; 2018 Fatec Rubens Lara. Todos os direitos reservados.
+            </div>
+        </div>
+    </body>
+</html>
