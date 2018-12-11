@@ -1,4 +1,4 @@
-NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', '$modal', function(NewsLiveService, $modal) {
+NewsLive.controller('NewsLiveControllerAdmin', ['NewsLiveService', function(NewsLiveService) {
 
     var vm = this;
 

@@ -1,19 +1,26 @@
 #content_home {
     width: 1024px; 
-    height: 1336px; 
+    height: 1250px; 
     margin-left: auto; 
     margin-right: auto;
 }
 #homepage1 {
     width: 729px;
-    height: 1336px;
+    height: 1250px;
     float: left;
 }
 #homepage2 {
     width: 285px;
-    height: 1336px;
+    height: 620px;
     float: left;
     margin-left: 10px;
+}
+#homepage3 {
+    width: 285px;
+    height: 620px;
+    float: left;
+    margin-left: 10px;
+    margin-top: 10px;
 }
 #titulo1 {
     width: 729px;

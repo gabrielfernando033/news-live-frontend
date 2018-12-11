@@ -19,15 +19,12 @@
         <script src="js/angularjs/angular-sanitize.min.js"></script>
         <script src="js/bootstrap/ui-bootstrap/ui-bootstrap-tpls-0.12.0.js"></script>
         <script src="js/angularjs/module/app.js"></script>
-        <script src="js/angularjs/controller/controllerHome.js"></script>
+        <script src="js/angularjs/controller/controllerNoticia.js"></script>
         <script src="js/angularjs/service/service.js"></script>
     </head>
     <body ng-app="NewsLive">
-        <div ng-controller="NewsLiveController as controller" ng-init="controller.init()">
-            <div id="barra">
-                <img src="images/ic_admin.png" alt="" />
-                <a href="admin.html">Administrador</a>
-            </div>
+        <div ng-controller="NewsLiveControllerNoticia as controller" ng-init="controller.init()">
+            <div id="barra"></div>
             <div id="topo">
                 <div id="topo_content">
                     <div id="topo_logo">
@@ -66,45 +63,10 @@
                     </marquee>
                 </div>
             </div>
-            <div id="content_home">
-                <div id="homepage1">
-                    <div id="titulo1">
-                        <span></span>Notícias em alta
-                    </div>
-                    <div ng-repeat="noticia in controller.noticias | orderBy: 'id':true | limitTo: 5">
-                        <a href="noticia.html?id={{noticia.id}}" class="news">
-                            <div class="news_imagem">
-                                <img src="{{noticia.imagem}}" alt="" />
-                            </div>
-                            <div class="news_conteudo">
-                                <b>{{noticia.titulo}}</b><br />
-                                <span>{{noticia.subtitulo}}</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-                <div id="homepage2">
-                    <div id="titulo2">
-                        <span style="background-color: #008C46;"></span>Esportes
-                    </div>
-                    <div ng-repeat="esporte in controller.esportes | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
-                            <img src="{{esporte.imagem}}" alt="" />
-                            {{esporte.titulo}}}
-                        </a>
-                    </div>
-                </div>
-                <div id="homepage3">
-                    <div id="titulo2">
-                        <span></span>Agenda
-                    </div>
-                    <div ng-repeat="evento in controller.eventos | orderBy: 'id':true | limitTo: 10">
-                        <a href="#" class="news_lateral">
-                            <img src="{{evento.imagem}}" alt="" />
-                            {{evento.titulo}}
-                        </a>
-                    </div>
-                </div>
+            <div id="content">
+
+                
+
             </div>
             <div id="barra_rodape"></div>
             <div id="rodape">
