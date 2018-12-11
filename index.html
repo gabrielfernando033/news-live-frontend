@@ -79,7 +79,7 @@
                     <div id="titulo1">
                         <span></span>Notícias em alta
                     </div>
-                    <div ng-repeat="noticia in controller.noticias | orderBy: 'id':true | limitTo: 5">
+                    <div ng-repeat="noticia in controller.noticias | orderBy: 'id':true | limitTo: 7">
                         <a href="noticia.html?id={{noticia.id}}" class="news">
                             <div class="news_imagem">
                                 <img src="{{noticia.imagem}}" alt="" />
